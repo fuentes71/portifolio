@@ -5,34 +5,66 @@ import styled from "styled-components";
 export const Container = styled.nav`
 display:flex;
 justify-items: center;
-
 align-items:center;
 flex-direction: column;
 position: fixed;
 top:2%;
-left:20px;
-gap:20px;
+left:10px;
+gap:10px;
 width:3rem;
 height:3rem;
 border-radius: 25px;
-background-color:gray;
-transition: all 1s;
+background: linear-gradient(205deg, #1ab28b, #fa00ff);
+    background-size: 400% 400%;
+
+    -webkit-animation: AnimationName 30s ease infinite;
+    -moz-animation: AnimationName 30s ease infinite;
+    -o-animation: AnimationName 30s ease infinite;
+    animation: AnimationName 30s ease infinite;transition: all 1s;
 overflow:hidden;
 
 
 &.nav-active{
   width:25rem;
+  border-radius: 0 20px;
 }
 @media (max-width: 600px) {
+ display:none; 
+}
+@media (max-width: 900px) {
+  left: 20px;
   &.nav-active{
   width:22rem;
+  border-radius: 0 20px;
+
 }}
+
+@-webkit-keyframes AnimationName {
+    0%{background-position:0% 75%}
+    50%{background-position:100% 26%}
+    100%{background-position:0% 75%}
+}
+@-moz-keyframes AnimationName {
+    0%{background-position:0% 75%}
+    50%{background-position:100% 26%}
+    100%{background-position:0% 75%}
+}
+@-o-keyframes AnimationName {
+    0%{background-position:0% 75%}
+    50%{background-position:100% 26%}
+    100%{background-position:0% 75%}
+}
+@keyframes AnimationName {
+    0%{background-position:0% 75%}
+    50%{background-position:100% 26%}
+    100%{background-position:0% 75%}
+}
 `;
 
 export const SetMenu = styled.input`
 display:block;
 position:fixed;
- left: 0;
+ left: 1px;
  top:10px;
 margin:10px;
   cursor: pointer;
@@ -92,6 +124,7 @@ list-style: none;
 `;
 
 export const Item = styled.li`
+font-weight: 800;
 background-color:transparent;
 font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 cursor:pointer;

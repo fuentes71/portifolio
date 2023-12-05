@@ -1,18 +1,20 @@
 import { useState } from 'react'
 import * as S from './Style'
 
+
 const NavBar = () => {
-  const [active, setActive] = useState("burger");
+  const [active, setActive] = useState("burguer");
   const showSideBar = () => {
-    if (active === "burger") {
-      setActive("nav-active");
-    } else {
-      setActive("burger");
-    }
+    setActive(active === "burguer" ? "nav-active" : "burguer")
   };
-  return (<>
-    <S.Container className={active}>
-      <S.SetMenu type='checkbox' onClick={showSideBar} role="button"/>
+
+  const handleMouseEvent = () =>{
+    setActive("burguer")
+  }
+  return (
+  <>
+    <S.Container className={active} onMouseLeave={handleMouseEvent}>
+      <S.SetMenu type='checkbox' checked={active === "burguer"? false:true} onClick={showSideBar} role="button"/>
     
         <S.List className={active}>
           <S.Item>Sobre</S.Item>
